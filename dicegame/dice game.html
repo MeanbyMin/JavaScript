@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice game</title>
+</head>
+<body>
+    <h2>Dice game</h2>
+    <script>
+        'use strict';
+        const num = Number(prompt('원하는 숫자를 1 ~ 6까지 입력하세요.'));
+        let random = Math.random();
+        let dice = Math.floor(random * 6) + 1;
+
+        if(num < 1 || num > 6){
+            alert('1 ~ 6까지 숫자를 입력하세요.');
+        }
+
+        document.write(`<p>입력한 숫자 : ${num}</p>`);
+        document.write(`<p>주사위 숫자 : ${dice}</p>`);
+        if(num === dice){
+            document.write(`<p>맞았습니다 !</p>`);
+        }else{
+            document.write(`<p>틀렸습니다 !</p>`);
+        }
+    </script>
+</body>
+</html>
