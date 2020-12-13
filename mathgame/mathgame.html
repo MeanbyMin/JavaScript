@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math game</title>
+</head>
+<body>
+    <h2>Math game</h2>
+    <script>
+        'use strict';
+        let score = Number('');
+        for(;;){
+            let random1 = Math.random();
+            let random2 = Math.random();
+            let random3 = Math.random();
+
+            let num1 = Math.floor(random1 * 9) + 1;
+            let num2 = Math.floor(random2 * 9) + 1;
+            let num3 = Math.floor(random3 * 4) + 1;
+            let cal;
+            let result;
+            
+            switch(num3){
+                case 1:
+                    cal = "+";
+                    result = num1 + num2;
+                    break;
+                case 2:
+                    cal = "-";
+                    result = num1 - num2;
+                    break;
+                case 3:
+                    cal = "*";
+                    result = num1 * num2;
+                    break;
+                case 4:
+                    cal = "/";
+                    result = parseInt(num1 / num2); // 나눗셈에서 정수만 받기위해
+                    break;
+            }
+
+            let user = Number(prompt(`${num1} ${cal} ${num2} = ? (나눗셈은 정수만 표시)`));
+            
+            if(Number(user) == result){
+                score += 1;
+                alert(`맞았습니다. (스코어 : ${score})`);
+            }
+            if(score==10)break;
+        }
+    </script>
+</body>
+</html>
