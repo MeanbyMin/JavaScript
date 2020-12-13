@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors game</title>
+</head>
+<body>
+    <h2>Rock-Paper-Scissors game</h2>
+    <script>
+        'use strict';
+        let user = prompt('가위, 바위, 보 중 하나를 입력하세요.');
+        const random = Math.random();
+        let com = Math.floor(random * 3) + 1; //가위, 바위, 보 랜덤 실행을 위해
+
+        if(user !== "가위" && user !== "바위" && user !== "보"){
+            alert('가위, 바위, 보 중 하나를 입력하세요.');
+        }
+        
+        document.write(`<p>유저 : ${user}</p>`);
+        switch(user){
+            case "가위":
+                user = -1;
+                break;
+            case "바위":
+                user = 0;
+                break;
+            case "보":
+                user = 1;
+                break;
+        }
+
+        switch(com){
+            case 1:
+                com = "가위";
+                break;
+            case 2:
+                com = "바위";
+                break;
+            case 3:
+                com = "보";
+                break;
+        }
+        document.write(`<p>컴퓨터 : ${com}</p>`);
+        
+        switch(com){
+            case "가위":
+                com = -1;
+                break;
+            case "바위":
+                com = 0;
+                break;
+            case "보":
+                com = 1;
+                break;
+        }
+
+        if(user - com > 0){
+            document.write(`<p>유저 승 !</p>`);
+        }else if(user - com === 0){
+            document.write('<p>비겼습니다 !</p>');
+        }else{
+            document.write(`<p>컴퓨터 승 !</p>`);
+        }
+    </script>
+</body>
+</html>
